@@ -1,12 +1,23 @@
 console.log("module1 is loaded");
 
 function add(a, b) {
-    return a + b;
+    return a+b;
 }
 
-module.exports = {
-    add : add   // make the add() function accesible 
-                // outside the module
+function mult(a, b) {
+    return a*b;
+}
+
+// first define the main function
+
+module.exports = add;     // the add() function defined outside
+                          // the module, is made main
+
+// then define the secondary functions
+
+module.exports.mult = mult;    
+
+
                 
-};
+
 
